@@ -12,8 +12,9 @@ export default function Products() {
 
   const cargarProductos = async () => {
     try {
-      const res = axios.get('https://blossom-backend.vercel.app/api/productos');
-      setProductos(res.data);
+      const res = await axios.get('https://blossom-backend.vercel.app/api/productos');
+setProductos(res.data);
+
     } catch (err) {
       console.error('Error al cargar productos:', err);
     } finally {

@@ -1,65 +1,32 @@
-.masonry-gallery {
-  column-count: 3;
-  column-gap: 1rem;
-  animation: fadeIn 1.5s ease-in-out;
+.gallery-section {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.masonry-item img {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
   width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  filter: grayscale(40%) contrast(110%) brightness(95%);
-  transition: filter 0.4s ease, transform 0.3s ease;
 }
 
-.masonry-item::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border-radius: 16px;
-  pointer-events: none;
-  mix-blend-mode: overlay;
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.masonry-item:hover {
-  transform: scale(1.04) rotateZ(-0.2deg);
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.masonry-item:hover img {
-  filter: none;
-}
-
-@media (max-width: 768px) {
-  .masonry-gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry-gallery {
-    column-count: 1;
-  }
-}
-
-/* Efecto sutil de entrada */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.gallery-item:hover img {
+  transform: scale(1.05);
 }

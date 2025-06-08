@@ -40,18 +40,25 @@ export default function Gallery() {
   return (
     <section className="gallery-section">
       <div className="abstract-grid">
-        {imagenes.map((img, idx) => (
-          <div
-            key={idx}
-            className={`grid-item span-${(idx % 5) + 1}`}
-            onClick={() => openModal(idx)}
-          >
-            <img src={img.url} alt={`Imagen ${idx}`} />
-            <div className="overlay-title">
-              <h3>{img.titulo}</h3>
+        {imagenes.map((img, idx) => {
+          let sizeClass = '';
+          if (idx % 7 === 0) sizeClass = 'span-2x2';
+          else if (idx % 5 === 0) sizeClass = 'span-2x1';
+          else if (idx % 3 === 0) sizeClass = 'span-1x2';
+
+          return (
+            <div
+              key={idx}
+              className={`grid-item ${sizeClass}`}
+              onClick={() => openModal(idx)}
+            >
+              <img src={img.url} alt={`Imagen ${idx}`} />
+              <div className="overlay-title">
+                <h3>{img.titulo}</h3>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">

@@ -1,28 +1,24 @@
 .gallery-section {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-x: hidden;
+  background: #000;
 }
 
 .abstract-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 2px;
   width: 100%;
-  height: 100%;
-  gap: 0;
 }
 
 .grid-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  aspect-ratio: 1 / 1;
 }
 
 .grid-item img {
@@ -35,6 +31,20 @@
 
 .grid-item:hover img {
   transform: scale(1.05);
+}
+
+/* ABSTRACTO: tamaños variados */
+.span-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.span-1x2 {
+  grid-row: span 2;
+}
+
+.span-2x1 {
+  grid-column: span 2;
 }
 
 .overlay-title {

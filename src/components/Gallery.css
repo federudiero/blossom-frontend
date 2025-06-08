@@ -5,28 +5,54 @@
   overflow-x: hidden;
 }
 
-.gallery-grid {
+.abstract-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 0;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 150px;
   width: 100%;
 }
 
-.gallery-item {
-  width: 100%;
-  height: 100%;
+.grid-item {
+  position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-.gallery-item img {
+.grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
   display: block;
-  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.05);
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Distintas alturas para collage irregular */
+.span-1 { grid-row: span 1; }
+.span-2 { grid-row: span 2; }
+.span-3 { grid-row: span 1; }
+.span-4 { grid-row: span 2; }
+.span-5 { grid-row: span 3; }
+
+/* Modal navegación */
+.custom-modal .prev-btn,
+.custom-modal .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+  opacity: 0.7;
+  font-size: 2rem;
+  border: none;
+}
+
+.custom-modal .prev-btn {
+  left: 1rem;
+}
+
+.custom-modal .next-btn {
+  right: 1rem;
 }

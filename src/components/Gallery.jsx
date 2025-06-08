@@ -28,9 +28,7 @@ const imagenes = [
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890873/blossom/IMG_5596_ggkmqi.jpg", titulo: "SUBWAY AURA" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890848/blossom/IMG_5639_mgynsm.jpg", titulo: "URBAN WHIM" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890842/blossom/IMG_5650_vq6fui.jpg", titulo: "DREAMSHIFT" },
-  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" },
-   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" },
-    { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" }
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" }
 ];
 
 export default function Gallery() {
@@ -49,25 +47,18 @@ export default function Gallery() {
   return (
     <section className="gallery-section">
       <div className="abstract-grid">
-        {imagenes.map((img, idx) => {
-          let sizeClass = '';
-          if (idx % 7 === 0) sizeClass = 'span-2x2';
-          else if (idx % 5 === 0) sizeClass = 'span-2x1';
-          else if (idx % 3 === 0) sizeClass = 'span-1x2';
-
-          return (
-            <div
-              key={idx}
-              className={`grid-item ${sizeClass}`}
-              onClick={() => openModal(idx)}
-            >
-              <img src={img.url} alt={`Imagen ${idx}`} />
-              <div className="overlay-title">
-                <h3>{img.titulo}</h3>
-              </div>
+        {imagenes.map((img, idx) => (
+          <div
+            key={idx}
+            className="grid-item"
+            onClick={() => openModal(idx)}
+          >
+            <img src={img.url} alt={`Imagen ${idx}`} />
+            <div className="overlay-title">
+              <h3>{img.titulo}</h3>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">

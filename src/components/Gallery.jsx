@@ -3,25 +3,25 @@ import { Modal, Image, Button } from 'react-bootstrap';
 import './Gallery.css';
 
 const imagenes = [
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890948/blossom/IMG_5507_hmope9.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890926/blossom/IMG_5532_zhnrwt.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890898/blossom/IMG_5554_denrel.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890887/blossom/IMG_5572_sakgex.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890881/blossom/IMG_5581_msqkb3.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890867/blossom/IMG_5605_gjgwe7.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890862/blossom/IMG_5610_d1twjt.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890860/blossom/IMG_5624_t8fsh6.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890854/blossom/IMG_5631_scd9ej.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890842/blossom/IMG_5649_bsohwl.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890837/blossom/IMG_5658_svoqzj.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890830/blossom/IMG_5674_rjvrfe.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890827/blossom/IMG_5685_givfsz.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890822/blossom/IMG_5704_dq2qg9.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890822/blossom/IMG_5698_dffxnm.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5716_nkaglw.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5712_e5jgee.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890810/blossom/IMG_5755_bbaueo.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890829/blossom/IMG_5676_tkxdcu.jpg"
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890948/blossom/IMG_5507_hmope9.jpg", titulo: "VINTAGE SPIRIT" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890926/blossom/IMG_5532_zhnrwt.jpg", titulo: "SHADOWS OF STYLE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890898/blossom/IMG_5554_denrel.jpg", titulo: "URBAN SILENCE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890887/blossom/IMG_5572_sakgex.jpg", titulo: "MIDNIGHT GAZE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890881/blossom/IMG_5581_msqkb3.jpg", titulo: "REBEL MOTION" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890867/blossom/IMG_5605_gjgwe7.jpg", titulo: "CONCRETE FLOW" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890862/blossom/IMG_5610_d1twjt.jpg", titulo: "NOIR YOUTH" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890860/blossom/IMG_5624_t8fsh6.jpg", titulo: "STATIC ELEGANCE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890854/blossom/IMG_5631_scd9ej.jpg", titulo: "SYNTH DREAMS" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890842/blossom/IMG_5649_bsohwl.jpg", titulo: "MONOCHROME HAZE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890837/blossom/IMG_5658_svoqzj.jpg", titulo: "INNER MUSE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890830/blossom/IMG_5674_rjvrfe.jpg", titulo: "ELECTRIC STILLNESS" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890827/blossom/IMG_5685_givfsz.jpg", titulo: "LUCID CHAOS" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890822/blossom/IMG_5704_dq2qg9.jpg", titulo: "WILD GROUND" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890822/blossom/IMG_5698_dffxnm.jpg", titulo: "RAW BALANCE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5716_nkaglw.jpg", titulo: "PAUSED NIGHT" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5712_e5jgee.jpg", titulo: "AFTERGLOW EDGE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890810/blossom/IMG_5755_bbaueo.jpg", titulo: "RITUAL SILENCE" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890829/blossom/IMG_5676_tkxdcu.jpg", titulo: "NEON DUST" }
 ];
 
 export default function Gallery() {
@@ -39,41 +39,25 @@ export default function Gallery() {
 
   return (
     <section className="gallery-section">
-      {/* Galería original */}
       <div className="abstract-grid">
-        {imagenes.map((url, idx) => {
-          const isLastRow = idx >= imagenes.length - 4;
-          return (
-            <div
-              key={idx}
-              className={`grid-item span-${(idx % 5) + 1} ${isLastRow ? 'rounded-bottom' : ''}`}
-              onClick={() => openModal(idx)}
-            >
-              <img src={url} alt={`Imagen ${idx}`} />
+        {imagenes.map((img, idx) => (
+          <div
+            key={idx}
+            className={`grid-item span-${(idx % 5) + 1}`}
+            onClick={() => openModal(idx)}
+          >
+            <img src={img.url} alt={`Imagen ${idx}`} />
+            <div className="overlay-title">
+              <h3>{img.titulo}</h3>
             </div>
-          );
-        })}
-      </div>
-
-      {/* Galería espejo */}
-      <div className="abstract-grid mirror">
-        {imagenes.map((url, idx) => {
-          const isLastRow = idx >= imagenes.length - 4;
-          return (
-            <div
-              key={`mirror-${idx}`}
-              className={`grid-item span-${(idx % 5) + 1} ${isLastRow ? 'rounded-bottom' : ''}`}
-            >
-              <img src={url} alt={`Imagen espejo ${idx}`} />
-            </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">
         <Modal.Body className="text-center bg-dark position-relative">
           <Button variant="light" className="prev-btn" onClick={prevImage}>←</Button>
-          <Image src={imagenes[currentIndex]} fluid />
+          <Image src={imagenes[currentIndex].url} fluid />
           <Button variant="light" className="next-btn" onClick={nextImage}>→</Button>
         </Modal.Body>
       </Modal>

@@ -20,7 +20,8 @@ const imagenes = [
   "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890822/blossom/IMG_5698_dffxnm.jpg",
   "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5716_nkaglw.jpg",
   "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5712_e5jgee.jpg",
-  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890810/blossom/IMG_5755_bbaueo.jpg"
+  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890810/blossom/IMG_5755_bbaueo.jpg",
+  "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890829/blossom/IMG_5676_tkxdcu.jpg"
 ];
 
 export default function Gallery() {
@@ -37,7 +38,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-5 bg-light">
       <Container>
-        <h2 className="text-center mb-4" style={{ fontWeight: '600' }}>Galería</h2>
+      
         <div className="masonry-gallery">
           {imagenes.map((url, idx) => (
             <div key={idx} className="masonry-item" onClick={() => openModal(url)}>

@@ -28,8 +28,8 @@ function App() {
             element={
               <>
                 <Hero />
-                <About />
               <BenefitsBar/>
+                <About />
                 <Gallery />
                 <Contact />
                 <Products />

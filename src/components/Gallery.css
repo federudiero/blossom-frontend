@@ -60,3 +60,11 @@
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
+.mirror {
+  transform: scaleY(-1);
+  margin-top: 0;
+  margin-bottom: 100px;
+  opacity: 0.4;
+  filter: blur(1px) brightness(90%);
+  pointer-events: none; /* evita interacción */
+}

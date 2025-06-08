@@ -1,5 +1,6 @@
-import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Modal, Image } from 'react-bootstrap';
+import './Gallery.css';
 
 const imagenes = [
   "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890948/blossom/IMG_5507_hmope9.jpg",
@@ -23,25 +24,33 @@ const imagenes = [
 ];
 
 export default function Gallery() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImg, setSelectedImg] = useState('');
+
+  const openModal = (img) => {
+    setSelectedImg(img);
+    setShowModal(true);
+  };
+
+  const closeModal = () => setShowModal(false);
+
   return (
     <section id="gallery" className="py-5 bg-light">
       <Container>
         <h2 className="text-center mb-4" style={{ fontWeight: '600' }}>Galería</h2>
-        <Row>
+        <div className="masonry-gallery">
           {imagenes.map((url, idx) => (
-            <Col key={idx} md={4} sm={6} xs={12} className="mb-4">
-              <Image
-                src={url}
-                fluid
-                rounded
-                className="shadow-sm"
-                style={{ transition: 'transform 0.3s', cursor: 'pointer' }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
-                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.0)'}
-              />
-            </Col>
+            <div key={idx} className="masonry-item" onClick={() => openModal(url)}>
+              <img src={url} alt={`Imagen ${idx}`} />
+            </div>
           ))}
-        </Row>
+        </div>
+
+        <Modal show={showModal} onHide={closeModal} centered size="xl">
+          <Modal.Body className="text-center bg-dark">
+            <Image src={selectedImg} fluid />
+          </Modal.Body>
+        </Modal>
       </Container>
     </section>
   );

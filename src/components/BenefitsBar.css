@@ -1,0 +1,36 @@
+.benefits-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
+}
+
+.benefit-item {
+  max-width: 220px;
+}
+
+.benefit-item h4 {
+  font-size: 1rem;
+  margin: 10px 0 5px;
+  letter-spacing: 0.5px;
+}
+
+.benefit-item p {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.benefit-item a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.benefit-item a:hover {
+  text-decoration: underline;
+}

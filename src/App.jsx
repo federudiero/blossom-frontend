@@ -11,6 +11,7 @@ import Products from './components/Products';
 import Cart from './components/Cart'; // Componente de carrito
 import { CartProvider } from './context/CartContext';
 import Checkout from './components/Checkout';
+import BenefitsBar from './components/BenefitsBar';
 
 
 
@@ -28,7 +29,7 @@ function App() {
               <>
                 <Hero />
                 <About />
-                <Services />
+              <BenefitsBar/>
                 <Gallery />
                 <Contact />
                 <Products />

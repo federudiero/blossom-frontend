@@ -7,7 +7,6 @@ export default function Gallery() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Reemplazá 'tu_nombre_de_cloud' con el nombre de tu cuenta de Cloudinary
     axios.get('https://res.cloudinary.com/tu_nombre_de_cloud/image/list/blossom_gallery.json')
       .then(res => {
         setImagenes(res.data.resources);
@@ -22,7 +21,7 @@ export default function Gallery() {
   return (
     <section id="gallery" className="py-5 bg-light">
       <Container>
-        <h2 className="text-center mb-4">Galería</h2>
+        <h2 className="text-center mb-4" style={{ fontWeight: '600' }}>Galería</h2>
         {loading ? (
           <div className="text-center"><Spinner animation="border" /></div>
         ) : (
@@ -33,6 +32,10 @@ export default function Gallery() {
                   src={`https://res.cloudinary.com/tu_nombre_de_cloud/image/upload/v1/${img.public_id}.jpg`}
                   fluid
                   rounded
+                  className="shadow-sm"
+                  style={{ transition: 'transform 0.3s', cursor: 'pointer' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1.0)'}
                 />
               </Col>
             ))}

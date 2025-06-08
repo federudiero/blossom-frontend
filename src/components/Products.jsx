@@ -10,60 +10,39 @@ export default function Products() {
   const [filtroCategoria, setFiltroCategoria] = useState('todos');
   const [loading, setLoading] = useState(true);
 
-  const cargarProductos = async () => {
-    try {
-      const res = await axios.get('https://blossom-backend-one.vercel.app/api/productos');
-
-setProductos(res.data);
-
-    } catch (err) {
-      console.error('Error al cargar productos:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    cargarProductos();
+    axios.get('https://blossom-backend-one.vercel.app/api/productos')
+      .then(res => setProductos(res.data))
+      .catch(err => console.error('Error al cargar productos:', err))
+      .finally(() => setLoading(false));
   }, []);
 
   const categoriasUnicas = [
     'todos',
-    ...new Set(productos.map((p) => p.categoria?.toLowerCase() || 'sin categoría')),
+    ...new Set(productos.map(p => p.categoria?.toLowerCase() || 'sin categoría')),
   ];
 
-  const productosFiltrados = productos.filter((prod) => {
-    const coincideTexto =
-      prod.nombre.toLowerCase().includes(filtroTexto.toLowerCase()) ||
-      prod.descripcion.toLowerCase().includes(filtroTexto.toLowerCase());
-
-    const coincideCategoria =
-      filtroCategoria === 'todos' ||
-      (prod.categoria && prod.categoria.toLowerCase() === filtroCategoria);
-
-    return coincideTexto && coincideCategoria;
-  });
+  const productosFiltrados = productos.filter(prod =>
+    (prod.nombre.toLowerCase().includes(filtroTexto.toLowerCase()) ||
+     prod.descripcion.toLowerCase().includes(filtroTexto.toLowerCase())) &&
+    (filtroCategoria === 'todos' || prod.categoria?.toLowerCase() === filtroCategoria)
+  );
 
   return (
     <section id="shop" className="py-5 bg-light">
       <Container>
         <h2 className="text-center mb-4">Tienda</h2>
-
-        {/* Filtros */}
         <Row className="mb-4">
           <Col md={6}>
             <Form.Control
               type="text"
-              placeholder="Buscar por nombre o descripción..."
+              placeholder="Buscar productos..."
               value={filtroTexto}
-              onChange={(e) => setFiltroTexto(e.target.value)}
+              onChange={e => setFiltroTexto(e.target.value)}
             />
           </Col>
           <Col md={6}>
-            <Form.Select
-              value={filtroCategoria}
-              onChange={(e) => setFiltroCategoria(e.target.value)}
-            >
+            <Form.Select value={filtroCategoria} onChange={e => setFiltroCategoria(e.target.value)}>
               {categoriasUnicas.map((cat, idx) => (
                 <option key={idx} value={cat}>
                   {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -74,14 +53,12 @@ setProductos(res.data);
         </Row>
 
         {loading ? (
-          <div className="text-center">
-            <Spinner animation="border" />
-          </div>
+          <div className="text-center"><Spinner animation="border" /></div>
         ) : (
           <Row>
-            {productosFiltrados.map((prod) => (
+            {productosFiltrados.map(prod => (
               <Col md={4} sm={6} xs={12} key={prod.id} className="mb-4">
-                <Card>
+                <Card className="shadow-sm border-0">
                   <Card.Img
                     variant="top"
                     src={prod.imagenUrl}
@@ -89,14 +66,10 @@ setProductos(res.data);
                   />
                   <Card.Body>
                     <Card.Title>{prod.nombre}</Card.Title>
-                    <Card.Text>{prod.descripcion}</Card.Text>
-                    <Card.Text>
-                      <strong>${prod.precio}</strong>
-                    </Card.Text>
-                    {prod.promo && (
-                      <span className="badge bg-danger mb-2">Promoción</span>
-                    )}
-                    <Button variant="primary" onClick={() => addToCart(prod)}>
+                    <Card.Text className="text-muted">{prod.descripcion}</Card.Text>
+                    <Card.Text className="fw-bold">${prod.precio}</Card.Text>
+                    {prod.promo && <span className="badge bg-danger mb-2">Promo</span>}
+                    <Button variant="dark" onClick={() => addToCart(prod)}>
                       Agregar al carrito
                     </Button>
                   </Card.Body>

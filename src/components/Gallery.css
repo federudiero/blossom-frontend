@@ -1,15 +1,28 @@
+.gallery-section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .abstract-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 180px;
-  gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 1fr;
   width: 100%;
   height: 100%;
+  gap: 0;
 }
+
 .grid-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  aspect-ratio: 1 / 1;
 }
 
 .grid-item img {
@@ -34,17 +47,12 @@
   font-size: 1rem;
   text-align: center;
   letter-spacing: 1px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.4);
   padding: 10px 20px;
   border-radius: 4px;
   pointer-events: none;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
-
-.span-1 { grid-row: span 1; }
-.span-2 { grid-row: span 2; }
-.span-3 { grid-row: span 1; }
-.span-4 { grid-row: span 2; }
-.span-5 { grid-row: span 3; }
 
 .custom-modal .prev-btn,
 .custom-modal .next-btn {
@@ -59,14 +67,6 @@
 
 .custom-modal .prev-btn { left: 1rem; }
 .custom-modal .next-btn { right: 1rem; }
-.gallery-section {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 
 @media (max-width: 768px) {
   .abstract-grid {

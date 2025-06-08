@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Modal, Image } from 'react-bootstrap';
-import './Gallery.css';
 
 const imagenes = [
   "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890948/blossom/IMG_5507_hmope9.jpg",
@@ -35,14 +34,54 @@ export default function Gallery() {
 
   const closeModal = () => setShowModal(false);
 
+  const galleryStyles = {
+    columnCount: 3,
+    columnGap: '1rem',
+  };
+
+  const itemStyles = {
+    breakInside: 'avoid',
+    marginBottom: '1rem',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease, filter 0.3s ease',
+    position: 'relative',
+  };
+
+  const imgStyles = {
+    width: '100%',
+    borderRadius: '16px',
+    boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+    filter: 'grayscale(40%) contrast(110%) brightness(95%)',
+    transition: 'all 0.4s ease',
+  };
+
+  const responsiveStyle = `
+    @media (max-width: 768px) {
+      .gallery-masonry {
+        column-count: 2 !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery-masonry {
+        column-count: 1 !important;
+      }
+    }
+  `;
+
   return (
     <section id="gallery" className="py-5 bg-light">
+      <style>{responsiveStyle}</style>
       <Container>
-      
-        <div className="masonry-gallery">
+        <div className="gallery-masonry" style={galleryStyles}>
           {imagenes.map((url, idx) => (
-            <div key={idx} className="masonry-item" onClick={() => openModal(url)}>
-              <img src={url} alt={`Imagen ${idx}`} />
+            <div
+              key={idx}
+              style={itemStyles}
+              onMouseEnter={(e) => e.currentTarget.firstChild.style.filter = 'none'}
+              onMouseLeave={(e) => e.currentTarget.firstChild.style.filter = imgStyles.filter}
+              onClick={() => openModal(url)}
+            >
+              <img src={url} alt={`Imagen ${idx}`} style={imgStyles} />
             </div>
           ))}
         </div>

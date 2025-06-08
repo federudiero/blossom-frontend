@@ -8,7 +8,7 @@ export default function About() {
         <Row className="align-items-center">
           <Col md={6} className="mb-4 mb-md-0">
             <img
-              src="/about.jpg"
+              src="https://res.cloudinary.com/doxadkm4r/image/upload/v1748890883/blossom/IMG_5573_rjxo7h.jpg"
               alt="Sobre Blossom"
               className="img-fluid rounded shadow"
               style={{ maxHeight: '450px', objectFit: 'cover' }}

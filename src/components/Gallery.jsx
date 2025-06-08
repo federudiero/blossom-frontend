@@ -29,6 +29,8 @@ const imagenes = [
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890848/blossom/IMG_5639_mgynsm.jpg", titulo: "URBAN WHIM" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890842/blossom/IMG_5650_vq6fui.jpg", titulo: "DREAMSHIFT" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" },
+   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" },
+    { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" }
 ];
 
 export default function Gallery() {

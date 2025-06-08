@@ -1,4 +1,25 @@
-.hero-section {
+.hero-carousel-wrapper {
   height: 100vh;
-  background: url('https://res.cloudinary.com/doxadkm4r/image/upload/v1748890949/blossom/IMG_5498_pwlpvw.jpg') center center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slide {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* oscurece imagen para que el texto resalte */
+  z-index: 1;
+}
+
+.carousel-item {
+  height: 100vh;
 }

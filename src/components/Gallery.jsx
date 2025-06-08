@@ -7,7 +7,7 @@ export default function Gallery() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://res.cloudinary.com/tu_nombre_de_cloud/image/list/blossom_gallery.json')
+    axios.get('https://res.cloudinary.com/blossom-app/image/list/blossom_gallery.json')
       .then(res => {
         setImagenes(res.data.resources);
         setLoading(false);
@@ -29,7 +29,7 @@ export default function Gallery() {
             {imagenes.map((img, idx) => (
               <Col key={idx} md={4} sm={6} xs={12} className="mb-4">
                 <Image
-                  src={`https://res.cloudinary.com/tu_nombre_de_cloud/image/upload/v1/${img.public_id}.jpg`}
+                  src={`https://res.cloudinary.com/blossom-app/image/upload/v1/${img.public_id}.${img.format}`}
                   fluid
                   rounded
                   className="shadow-sm"

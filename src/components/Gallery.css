@@ -56,3 +56,7 @@
 .custom-modal .next-btn {
   right: 1rem;
 }
+.rounded-bottom img {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}

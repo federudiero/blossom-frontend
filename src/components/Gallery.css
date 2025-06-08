@@ -1,13 +1,11 @@
 .abstract-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 180px;
-  gap: 5px;
+  gap: 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  height: 100%;
 }
-
 .grid-item {
   position: relative;
   overflow: hidden;
@@ -61,3 +59,22 @@
 
 .custom-modal .prev-btn { left: 1rem; }
 .custom-modal .next-btn { right: 1rem; }
+.gallery-section {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+  .abstract-grid {
+    grid-auto-rows: 150px;
+  }
+
+  .overlay-title {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

@@ -31,8 +31,8 @@ function App() {
               <BenefitsBar/>
                 <About />
                 <Gallery />
-                <Contact />
                 <Products />
+                <Contact />
               </>
             }
           />

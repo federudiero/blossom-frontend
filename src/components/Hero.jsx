@@ -8,7 +8,7 @@ export default function Hero() {
       <Container className="text-center">
         <h1 className="display-4 fw-bold">Diseñá tu identidad con Blossom</h1>
         <p className="lead">Branding, diseño gráfico y mucho más.</p>
-        <Button variant="dark" href="#contact">Contáctanos</Button>
+        <Button variant="dark" href="#shop">Tienda</Button>
       </Container>
     </div>
   );

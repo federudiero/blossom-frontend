@@ -22,7 +22,7 @@ const imagenes = [
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890818/blossom/IMG_5712_e5jgee.jpg", titulo: "AFTERGLOW EDGE" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890810/blossom/IMG_5755_bbaueo.jpg", titulo: "RITUAL SILENCE" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890829/blossom/IMG_5676_tkxdcu.jpg", titulo: "NEON DUST" },
-   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890988/blossom/IMG_5482_wtdvgy.jpg", titulo: "STONE WHISPER" },
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890988/blossom/IMG_5482_wtdvgy.jpg", titulo: "STONE WHISPER" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890896/blossom/IMG_5558_cvrzpy.jpg", titulo: "REVERSE GLARE" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890889/blossom/IMG_5564_iz2xqa.jpg", titulo: "MOTION STAND" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890873/blossom/IMG_5596_ggkmqi.jpg", titulo: "SUBWAY AURA" },

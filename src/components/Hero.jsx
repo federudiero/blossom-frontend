@@ -37,7 +37,7 @@ export default function Hero() {
 
   return (
     <div className="hero-carousel-wrapper" id="hero">
-      <Carousel fade controls={false} indicators={false} interval={5000} pause={false}>
+      <Carousel fade controls={false} indicators={false} interval={4000} pause={false}>
         {slides.map((slide, idx) => (
           <Carousel.Item key={idx}>
             <div

@@ -68,7 +68,7 @@ export default function Gallery() {
         setIndexBase((prev) => (prev + 3) % imagenes.length);
         setFade(true);
       }, 200);
-    }, 10000);
+    }, 80000);
 
     return () => clearInterval(timer);
   }, [indexBase, imagenes]);

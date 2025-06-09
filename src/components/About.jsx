@@ -16,7 +16,7 @@ export default function About() {
           </Col>
           <Col md={6}>
             <h2 className="mb-4" style={{ fontWeight: '600', fontSize: '2.2rem' }}>
-              Sobre Nosotros
+              Nosotros
             </h2>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
               En <strong>Blossom</strong> nos dedicamos al diseño integral de marcas. Combinamos creatividad y estrategia para potenciar la identidad de nuestros clientes, ofreciendo soluciones visuales de alto impacto que conectan con sus audiencias.

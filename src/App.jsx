@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BlossomNavbar from './components/BlossomNavbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
+
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -31,6 +31,7 @@ function App() {
               <BenefitsBar/>
                 <About />
                 <Gallery />
+                <BenefitsBar/>
                 <Products />
                 <Contact />
               </>

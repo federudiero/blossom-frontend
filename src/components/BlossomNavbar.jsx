@@ -13,7 +13,7 @@ export default function BlossomNavbar() {
         <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto" style={{ gap: '1rem' }}>
             <Nav.Link href="#about">Nosotros</Nav.Link>
-            <Nav.Link href="#services">Servicios</Nav.Link>
+            
             <Nav.Link href="#gallery">Galería</Nav.Link>
             <Nav.Link href="#contact">Contacto</Nav.Link>
             <Nav.Link href="#shop">Tienda</Nav.Link>

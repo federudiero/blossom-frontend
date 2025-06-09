@@ -62,17 +62,7 @@ export default function Contact() {
               {sent && <Alert className="mt-3" variant="success">Mensaje enviado</Alert>}
             </Form>
           </Col>
-          <Col md={6}>
-            <iframe
-              title="mapa"
-              src="https://www.google.com/maps/embed?pb=..."
-              width="100%"
-              height="350"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </Col>
+         
         </Row>
       </Container>
     </section>

@@ -46,8 +46,8 @@ export default function Hero() {
             >
               <div className="overlay d-flex justify-content-center align-items-center text-white text-center">
                 <Container>
-                  <h1 className="display-4 fw-bold">Diseñá tu identidad con Blossom</h1>
-                  <p className="lead">Branding, diseño gráfico y mucho más.</p>
+                  <h1 className="display-4 fw-bold">BLOSSOM</h1>
+                  <p className="lead">Ropa de diseño y a tu medida</p>
                   <Button variant="light" href="#shop">Tienda</Button>
                 </Container>
               </div>

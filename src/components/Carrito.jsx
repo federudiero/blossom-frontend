@@ -5,7 +5,7 @@ import BotonMercadoPago from './BotonMercadoPago';
 
 export default function Carrito() {
   const { cart, removeFromCart } = useCart();
-  const total = cart.reduce((acc, item) => acc + item.precio, 0);
+  const total = cart.reduce((acc , item) => acc + item.precio, 0);
 
   return (
     <section id="carrito" className="py-5 bg-white">
@@ -30,7 +30,7 @@ export default function Carrito() {
                   <tr key={idx}>
                     <td>{item.nombre}</td>
                     <td>{item.categoria}</td>
-                    <td>${item.precio}</td>
+                    <td>$ {item.precio}</td>
                     <td>
                       <Button
                         variant="outline-danger"
@@ -45,7 +45,7 @@ export default function Carrito() {
               </tbody>
             </Table>
 
-            <h4 className="text-end me-3">Total: ${total}</h4>
+            <h4 className="text-end me-3">Total: $ {total}</h4>
 
             <div className="text-end mt-3">
               <BotonMercadoPago nombre="Compra Blossom" email="cliente@test.com" />

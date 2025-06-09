@@ -5,7 +5,7 @@ import './Gallery.css';
 const imagenes = [
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890948/blossom/IMG_5507_hmope9.jpg", titulo: "VINTAGE SPIRIT" },
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890926/blossom/IMG_5532_zhnrwt.jpg", titulo: "SHADOWS OF STYLE" },
-   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" }
+  { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890836/blossom/IMG_5662_rz7zew.jpg", titulo: "HALO GRIT" }
 ];
 
 export default function Gallery() {
@@ -23,26 +23,19 @@ export default function Gallery() {
 
   return (
     <section className="gallery-section">
-      <div className="abstract-grid">
-        {imagenes.map((img, idx) => {
-          let sizeClass = '';
-          if (idx % 7 === 0) sizeClass = 'span-2x2';
-          else if (idx % 5 === 0) sizeClass = 'span-2x1';
-          else if (idx % 3 === 0) sizeClass = 'span-1x2';
+      <div className="parent">
+        <div className="div1" onClick={() => openModal(0)}>
+          <img src={imagenes[0].url} alt="Imagen 1" className="image-tile" />
+        </div>
+        <div className="div2" onClick={() => openModal(1)}>
+          <img src={imagenes[1].url} alt="Imagen 2" className="image-tile" />
+        </div>
+        <div className="div3" onClick={() => openModal(2)}>
+          <img src={imagenes[2].url} alt="Imagen 3" className="image-tile" />
+        </div>
 
-          return (
-            <div
-              key={idx}
-              className={`grid-item ${sizeClass}`}
-              onClick={() => openModal(idx)}
-            >
-              <img src={img.url} alt={`Imagen ${idx}`} />
-              <div className="overlay-title">
-                <h3>{img.titulo}</h3>
-              </div>
-            </div>
-          );
-        })}
+        <div className="blossom-top">BLOSS</div>
+        <div className="blossom-bottom">OM</div>
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">

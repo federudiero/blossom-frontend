@@ -51,14 +51,13 @@ export default function Gallery() {
   const prevImage = () => setCurrentIndex((prev) => (prev === 0 ? imagenes.length - 1 : prev - 1));
   const nextImage = () => setCurrentIndex((prev) => (prev === imagenes.length - 1 ? 0 : prev + 1));
 
-  const preloadImage = (url) => {
-    return new Promise((resolve) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = resolve;
-    });
-  };
-
+ const preloadImage = (url) => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.src = url;
+    img.onload = resolve;
+  });
+};
   useEffect(() => {
     const timer = setInterval(async () => {
       const nextIndexes = [

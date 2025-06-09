@@ -94,8 +94,7 @@ export default function Gallery() {
           <img src={getImg(2).url} alt={getImg(2).titulo} className={`image-tile ${fadeClass ? 'fade-in' : ''}`} loading="lazy" />
         </div>
 
-        <div className="blossom-top">BLOSSOM</div>
-        <div className="blossom-bottom">BLOSSOM</div>
+       
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">

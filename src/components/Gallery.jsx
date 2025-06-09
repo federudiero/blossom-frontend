@@ -30,6 +30,7 @@ const rawImages = [
   { url: "https://res.cloudinary.com/doxadkm4r/image/upload/v1748890842/blossom/IMG_5650_vq6fui.jpg", titulo: "DREAMSHIFT" }
 ];
 
+// Optimizar URLs para carga automática
 const imagenesData = rawImages.map(img => ({
   ...img,
   url: img.url.replace('/upload/', '/upload/f_auto,q_auto/')
@@ -51,13 +52,14 @@ export default function Gallery() {
   const prevImage = () => setCurrentIndex((prev) => (prev === 0 ? imagenes.length - 1 : prev - 1));
   const nextImage = () => setCurrentIndex((prev) => (prev === imagenes.length - 1 ? 0 : prev + 1));
 
- const preloadImage = (url) => {
-  return new Promise((resolve) => {
-    const img = new Image();
-    img.src = url;
-    img.onload = resolve;
-  });
-};
+  const preloadImage = (url) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = resolve;
+    });
+  };
+
   useEffect(() => {
     const timer = setInterval(async () => {
       const nextIndexes = [
@@ -71,12 +73,13 @@ export default function Gallery() {
       setFadeClass(false);
       setTimeout(() => {
         setFadeClass(true);
-        setIndexBase((prev) => (prev + 3) % imagenes.length);
       }, 50);
+
+      setIndexBase((prev) => (prev + 3) % imagenes.length);
     }, 10000);
 
     return () => clearInterval(timer);
-  }, [indexBase, imagenes]);
+  }, [imagenes]);
 
   const getImg = (offset) => imagenes[(indexBase + offset) % imagenes.length];
 
@@ -92,8 +95,6 @@ export default function Gallery() {
         <div className="div3" onClick={() => openModal((indexBase + 2) % imagenes.length)}>
           <img src={getImg(2).url} alt={getImg(2).titulo} className={`image-tile ${fadeClass ? 'fade-in' : ''}`} loading="lazy" />
         </div>
-
-       
       </div>
 
       <Modal show={showModal} onHide={closeModal} centered size="xl" className="custom-modal">

@@ -5,7 +5,9 @@ import BotonMercadoPago from './BotonMercadoPago';
 
 export default function Carrito() {
   const { cart, removeFromCart } = useCart();
-  const total = cart.reduce((acc , item) => acc + item.precio, 0);
+
+  // Asegura que el precio sea numérico (por si viene como string)
+  const total = cart.reduce((acc, item) => acc + (parseFloat(item.precio) || 0), 0);
 
   return (
     <section id="carrito" className="py-5 bg-white">
@@ -30,7 +32,7 @@ export default function Carrito() {
                   <tr key={idx}>
                     <td>{item.nombre}</td>
                     <td>{item.categoria}</td>
-                    <td>$ {item.precio}</td>
+                    <td>${parseFloat(item.precio) || 0}</td>
                     <td>
                       <Button
                         variant="outline-danger"
@@ -45,7 +47,7 @@ export default function Carrito() {
               </tbody>
             </Table>
 
-            <h4 className="text-end me-3">Total: $ {total}</h4>
+            <h4 className="text-end me-3">Total: ${total.toFixed(2)}</h4>
 
             <div className="text-end mt-3">
               <BotonMercadoPago nombre="Compra Blossom" email="cliente@test.com" />

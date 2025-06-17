@@ -10,7 +10,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
-import AdminPanelModal from './components/AdminPanelModal';
+
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -38,8 +38,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
-        <Footer onAdminClick={() => setShowAdmin(true)} />
-        <AdminPanelModal show={showAdmin} onHide={() => setShowAdmin(false)} />
+        <Footer  />
+       
       </Router>
     </CartProvider>
   );

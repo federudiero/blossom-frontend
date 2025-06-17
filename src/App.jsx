@@ -10,7 +10,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
-import AdminPage from './pages/AdminPage.jsx'
+
 
 import { CartProvider } from './context/CartContext';
 

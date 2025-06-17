@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
+
 export default function BlossomNavbar() {
   return (
     <Navbar expand="lg" fixed="top" className="bg-white shadow-sm py-3">
@@ -18,7 +19,7 @@ export default function BlossomNavbar() {
             <Nav.Link href="#contact">Contacto</Nav.Link>
             <Nav.Link href="#shop">Tienda</Nav.Link>
             <Nav.Link as={Link} to="/cart">🛒 Carrito</Nav.Link>
-         
+         <Nav.Link as={Link} to="/admin">🔐 Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -10,7 +10,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
-
+import ProtectedAdminPanel from './components/ProtectedAdminPanel'; // ✅ correcto
 
 import { CartProvider } from './context/CartContext';
 
@@ -35,9 +35,8 @@ function App() {
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-         
+          <Route path="/admin" element={<ProtectedAdminPanel />} /> {/* ✅ protegido */}
         </Routes>
-
         <Footer />
       </Router>
     </CartProvider>

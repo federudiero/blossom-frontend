@@ -14,13 +14,12 @@ import AdminPanelModal from './components/AdminPanelModal';
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [showAdmin, setShowAdmin] = useState(false); // Estado para mostrar el modal
+  const [showAdmin, setShowAdmin] = useState(false);
 
   return (
     <CartProvider>
       <Router>
         <BlossomNavbar />
-
         <Routes>
           <Route
             path="/"
@@ -39,10 +38,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
-        {/* Footer con botón secreto para abrir modal */}
         <Footer onAdminClick={() => setShowAdmin(true)} />
-
-        {/* Modal de administración */}
         <AdminPanelModal show={showAdmin} onHide={() => setShowAdmin(false)} />
       </Router>
     </CartProvider>

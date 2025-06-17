@@ -3,8 +3,7 @@ import { Modal, Button, Form, Container, Table } from 'react-bootstrap';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
-export default function AdminPanelModal() {
-  const [showLogin, setShowLogin] = useState(false);
+export default function AdminPanelModal({ show, onHide }) {
   const [loggedIn, setLoggedIn] = useState(false);
   const [form, setForm] = useState({ title: '', price: '', image: '' });
   const [productos, setProductos] = useState([]);
@@ -25,7 +24,7 @@ export default function AdminPanelModal() {
     const { user, pass } = e.target.elements;
     if (user.value === 'juli' && pass.value === '123456') {
       setLoggedIn(true);
-      setShowLogin(false);
+      onHide();
     } else {
       alert('Credenciales incorrectas');
     }
@@ -63,37 +62,30 @@ export default function AdminPanelModal() {
 
   return (
     <>
-      {/* Ícono oculto en el footer */}
-      <div
-        style={{ position: 'fixed', bottom: 10, right: 15, cursor: 'pointer', zIndex: 9999 }}
-        onClick={() => setShowLogin(true)}
-        title="Acceso administrador"
-      >
-        🔒
-      </div>
-
       {/* Modal de login */}
-      <Modal show={showLogin} onHide={() => setShowLogin(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Acceso administrador</Modal.Title>
-        </Modal.Header>
-        <Form onSubmit={handleLogin}>
-          <Modal.Body>
-            <Form.Group className="mb-3">
-              <Form.Label>Usuario</Form.Label>
-              <Form.Control name="user" required />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control name="pass" type="password" required />
-            </Form.Group>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={() => setShowLogin(false)}>Cancelar</Button>
-            <Button variant="dark" type="submit">Ingresar</Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
+      {!loggedIn && (
+        <Modal show={show} onHide={onHide} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>Acceso administrador</Modal.Title>
+          </Modal.Header>
+          <Form onSubmit={handleLogin}>
+            <Modal.Body>
+              <Form.Group className="mb-3">
+                <Form.Label>Usuario</Form.Label>
+                <Form.Control name="user" required />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control name="pass" type="password" required />
+              </Form.Group>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={onHide}>Cancelar</Button>
+              <Button variant="dark" type="submit">Ingresar</Button>
+            </Modal.Footer>
+          </Form>
+        </Modal>
+      )}
 
       {/* Panel de administración */}
       {loggedIn && (

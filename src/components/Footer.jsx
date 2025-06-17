@@ -22,12 +22,11 @@ export default function Footer({ onAdminClick }) {
           </Col>
 
           <Col md={4} className="text-md-end text-center">
-            {/* redes sociales aquí si querés */}
             <p className="mt-2 mb-0">&copy; {new Date().getFullYear()} Blossom</p>
           </Col>
         </Row>
 
-        {/* Ícono oculto (posición absoluta dentro del footer) */}
+        {/* Ícono secreto */}
         <div
           onClick={onAdminClick}
           title="Acceso administrador"
@@ -36,7 +35,7 @@ export default function Footer({ onAdminClick }) {
             bottom: 10,
             right: 20,
             cursor: 'pointer',
-            zIndex: 10,
+            zIndex: 9999,
             fontSize: 20,
             opacity: 0.6
           }}

@@ -26,24 +26,26 @@ export default function Footer({ onAdminClick }) {
           </Col>
         </Row>
 
-        {/* Ícono secreto */}
-        <div
-          onClick={onAdminClick}
-          title="Acceso administrador"
-          style={{
-            position: 'absolute',
-            bottom: 10,
-            right: 20,
-            cursor: 'pointer',
-            zIndex: 9999,
-            fontSize: 20,
-            opacity: 0.6
-          }}
-          onMouseOver={e => (e.currentTarget.style.opacity = 1)}
-          onMouseOut={e => (e.currentTarget.style.opacity = 0.6)}
-        >
-          🔒
-        </div>
+        {/* Ícono secreto de acceso admin */}
+        {onAdminClick && (
+          <div
+            onClick={onAdminClick}
+            title="Acceso administrador"
+            style={{
+              position: 'absolute',
+              bottom: 10,
+              right: 20,
+              cursor: 'pointer',
+              zIndex: 9999,
+              fontSize: 20,
+              opacity: 0.6
+            }}
+            onMouseOver={e => (e.currentTarget.style.opacity = 1)}
+            onMouseOut={e => (e.currentTarget.style.opacity = 0.6)}
+          >
+            🔒
+          </div>
+        )}
       </Container>
     </footer>
   );

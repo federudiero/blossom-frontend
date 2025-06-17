@@ -42,8 +42,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
-        <Footer onAdminClick={() => setShowAdmin(true)} />
-        <AdminPanelModal show={showAdmin} onHide={() => setShowAdmin(false)} />
+        <Footer />
+      
       </Router>
     </CartProvider>
   );

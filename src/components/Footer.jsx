@@ -26,8 +26,8 @@ export default function Footer({ onAdminClick }) {
           </Col>
         </Row>
 
-        {/* Ícono secreto de acceso admin */}
-        {onAdminClick && (
+        {/* Ícono secreto solo si se pasa onAdminClick */}
+        {typeof onAdminClick === 'function' && (
           <div
             onClick={onAdminClick}
             title="Acceso administrador"

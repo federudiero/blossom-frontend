@@ -10,12 +10,12 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
-import AdminPanelModal from './components/AdminPanelModal'; // <--- importante
+import AdminPanelModal from './components/AdminPanelModal';
 
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [showAdmin, setShowAdmin] = useState(false); // <--- necesario para manejar el modal
+  const [showAdmin, setShowAdmin] = useState(false);
 
   return (
     <CartProvider>
@@ -39,10 +39,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
-        {/* Footer con ícono de acceso oculto */}
         <Footer onAdminClick={() => setShowAdmin(true)} />
-
-        {/* Modal de login + panel CRUD */}
         <AdminPanelModal show={showAdmin} onHide={() => setShowAdmin(false)} />
       </Router>
     </CartProvider>

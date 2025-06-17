@@ -12,6 +12,8 @@ import Cart from './components/Cart'; // Componente de carrito
 import { CartProvider } from './context/CartContext';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
+import AdminPanelModal from './components/AdminPanelModal';
+
 
 
 
@@ -40,7 +42,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
-
+<AdminPanelModal />
         <Footer />
       </Router>
     </CartProvider>

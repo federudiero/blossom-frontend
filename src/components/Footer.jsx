@@ -1,79 +1,31 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
-import axios from 'axios';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Contact() {
-  const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' });
-  const [sent, setSent] = useState(false);
-
-  const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      await axios.post('/api/contacto', formData);
-      setSent(true);
-      setFormData({ nombre: '', email: '', mensaje: '' });
-    } catch {
-      alert('Error al enviar el mensaje.');
-    }
-  };
-
+export default function Footer() {
   return (
-    <section id="contact" className="py-5 bg-light">
+    <footer className="bg-dark text-light py-4 mt-5">
       <Container>
-        <h2 className="text-center mb-4">Contacto</h2>
-        <Row>
+        <Row className="align-items-center">
           <Col md={6}>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3">
-                <Form.Label>Nombre</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="nombre"
-                  value={formData.nombre}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label>Mensaje</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={4}
-                  name="mensaje"
-                  value={formData.mensaje}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
-              <Button variant="dark" type="submit">Enviar</Button>
-              {sent && <Alert className="mt-3" variant="success">Mensaje enviado</Alert>}
-            </Form>
+            <h5 className="fw-bold">Blossom</h5>
+            <p className="mb-0">© {new Date().getFullYear()} Todos los derechos reservados</p>
           </Col>
-          <Col md={6}>
-            <iframe
-              title="mapa"
-              src="https://www.google.com/maps/embed?pb=..."
-              width="100%"
-              height="350"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+          <Col md={6} className="text-md-end mt-3 mt-md-0">
+            <div className="d-flex justify-content-md-end justify-content-center gap-3">
+              {/* Reemplazá estos <img> por íconos reales o FontAwesome */}
+              <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/whatsapp.svg" alt="WhatsApp" width={24} />
+              </a>
+              <a href="https://facebook.com/tuPagina" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/facebook.svg" alt="Facebook" width={24} />
+              </a>
+              <a href="https://instagram.com/tuPerfil" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/instagram.svg" alt="Instagram" width={24} />
+              </a>
+            </div>
           </Col>
         </Row>
       </Container>
-    </section>
+    </footer>
   );
 }

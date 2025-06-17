@@ -18,7 +18,7 @@ export default function BlossomNavbar() {
             <Nav.Link href="#contact">Contacto</Nav.Link>
             <Nav.Link href="#shop">Tienda</Nav.Link>
             <Nav.Link as={Link} to="/cart">🛒 Carrito</Nav.Link>
-          
+            <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

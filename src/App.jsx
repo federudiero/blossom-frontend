@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 
 import Gallery from './components/Gallery';
-import Contact from './components/Contact';
+
 import Footer from './components/Footer';
 import Products from './components/Products';
 import Cart from './components/Cart'; // Componente de carrito
@@ -33,7 +33,7 @@ function App() {
                 <Gallery />
                 <BenefitsBar/>
                 <Products />
-                <Contact />
+            
               </>
             }
           />

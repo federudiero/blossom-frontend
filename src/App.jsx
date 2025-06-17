@@ -10,11 +10,12 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
+import AdminPanelModal from './components/AdminPanelModal'; // <--- necesario
 
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [showAdmin, setShowAdmin] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false); // <--- importante
 
   return (
     <CartProvider>
@@ -38,8 +39,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
-        <Footer  />
-       
+        <Footer onAdminClick={() => setShowAdmin(true)} />
+        <AdminPanelModal show={showAdmin} onHide={() => setShowAdmin(false)} />
       </Router>
     </CartProvider>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import BlossomNavbar from './components/BlossomNavbar';
@@ -10,14 +10,11 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
-import AdminPanelModal from './components/AdminPanelModal';
 import AdminPage from './pages/AdminPage';
 
 import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [showAdmin, setShowAdmin] = useState(false);
-
   return (
     <CartProvider>
       <Router>
@@ -33,17 +30,15 @@ function App() {
                 <Gallery />
                 <BenefitsBar />
                 <Products />
-                <AdminPage />
               </>
             }
           />
-         
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/admin" element={<AdminPage />} /> {/* ✅ ruta separada */}
         </Routes>
 
         <Footer />
-      
       </Router>
     </CartProvider>
   );

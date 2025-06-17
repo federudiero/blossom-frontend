@@ -11,6 +11,7 @@ import Cart from './components/Cart';
 import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
 import AdminPanelModal from './components/AdminPanelModal';
+import AdminPage from './pages/AdminPage';
 
 import { CartProvider } from './context/CartContext';
 
@@ -32,9 +33,11 @@ function App() {
                 <Gallery />
                 <BenefitsBar />
                 <Products />
+                <AdminPage />
               </>
             }
           />
+         
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

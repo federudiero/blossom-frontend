@@ -35,7 +35,7 @@ function App() {
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/admin" element={<AdminPage />} /> {/* ✅ ruta separada */}
+         
         </Routes>
 
         <Footer />

@@ -48,7 +48,21 @@ export default function Hero() {
                 <Container>
                   <h1 className="display-4 fw-bold">BLOSSOM</h1>
                   <p className="lead">Ropa de diseño y a tu medida</p>
-                  <Button variant="light" href="#shop">Tienda</Button>
+                 <Button
+  variant="light"
+  href="#shop"
+  className="btn-lg px-4 py-2"
+  style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: 600,
+    fontSize: '1.1rem',
+    borderRadius: '50px',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+  }}
+>
+  ✨ Ver Catálogo
+</Button>
+
                 </Container>
               </div>
             </div>

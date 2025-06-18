@@ -12,6 +12,8 @@ import Checkout from './components/Checkout';
 import BenefitsBar from './components/BenefitsBar';
 import ProtectedAdminPanel from './components/ProtectedAdminPanel.jsx'; // ✅ correcto
 
+import GalleryAlt from './components/GalleryAlt';
+import Resultados from './components/Resultados';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -28,13 +30,15 @@ function App() {
                 <BenefitsBar />
                 <About />
                 <Gallery />
-                <BenefitsBar />
+                <GalleryAlt/>
+               
                 <Products />
               </>
             }
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/resultados" element={<Resultados />} />
           <Route path="/admin" element={<ProtectedAdminPanel />} /> {/* ✅ protegido */}
         </Routes>
         <Footer />

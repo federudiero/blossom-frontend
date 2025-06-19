@@ -40,29 +40,25 @@ export default function Hero() {
       <Carousel fade controls={false} indicators={false} interval={4000} pause={false}>
         {slides.map((slide, idx) => (
           <Carousel.Item key={idx}>
-            <div
-              className="hero-slide"
-              style={{ backgroundImage: `url(${slide.url})` }}
-            >
-              <div className="overlay d-flex justify-content-center align-items-center text-white text-center">
+            <div className="hero-slide" style={{ backgroundImage: `url(${slide.url})` }}>
+              <div className="overlay">
                 <Container>
                   <h1 className="display-4 fw-bold">BLOSSOM</h1>
-                  <p className="lead">Ropa de diseño y a tu medida</p>
-                 <Button
-  variant="light"
-  href="#shop"
-  className="btn-lg px-4 py-2"
-  style={{
-    fontFamily: 'Montserrat, sans-serif',
-    fontWeight: 600,
-    fontSize: '1.1rem',
-    borderRadius: '50px',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-  }}
->
-  ✨ Ver Catálogo
-</Button>
-
+                  <p className="lead">{slide.titulo}</p>
+                  <Button
+                    variant="light"
+                    href="#shop"
+                    className="btn-lg px-4 py-2"
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '1.1rem',
+                      borderRadius: '50px',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                    }}
+                  >
+                    ✨ Ver Catálogo
+                  </Button>
                 </Container>
               </div>
             </div>

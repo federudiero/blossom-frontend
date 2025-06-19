@@ -1,16 +1,11 @@
-h1 {
-  font-family: 'DM Serif Display', serif;
-}
-
-.hero-carousel-wrapper p,
-.hero-carousel-wrapper button {
-  font-family: 'Montserrat', sans-serif;
-}
-
 .hero-carousel-wrapper {
   height: 100vh;
   position: relative;
   overflow: hidden;
+}
+
+.carousel-item {
+  height: 100vh;
 }
 
 .hero-slide {
@@ -18,32 +13,30 @@ h1 {
   background-size: cover;
   background-position: center;
   position: relative;
-  z-index: 0;
 }
 
-.carousel-item {
-  height: 100vh;
-  position: relative;
-}
-
-.overlay {
+.overlay-content {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
+  color: white;
 }
 
-.overlay h1,
-.overlay p,
-.overlay button {
-  z-index: 3;
-  position: relative;
+.overlay-content h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* más responsivo */
+}
+
+.overlay-content p,
+.overlay-content button {
+  font-family: 'Montserrat', sans-serif;
 }

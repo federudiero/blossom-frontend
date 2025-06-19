@@ -14,6 +14,7 @@ import ProtectedAdminPanel from './components/ProtectedAdminPanel.jsx'; // ✅ c
 
 import GalleryAlt from './components/GalleryAlt';
 import Resultados from './components/Resultados';
+import  CarruselMarca from './components/CarruselMarca>';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                 <GalleryAlt/>
                
                 <Products />
+                 <CarruselMarca />
               </>
             }
           />
